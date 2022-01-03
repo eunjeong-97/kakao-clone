@@ -1,6 +1,39 @@
 .status-bar {
   display: flex;
+  /*
+  css hack 
+  1. status-bar의 요소들을 정중앙에 위치시킨다
+  .status-bar { 
+    display: flex;
+    justify-content: center;
+  }
+
+  2. status-bar의 요소들의 너비를 각각 3등분한다
+  .status-bar__column {
+    width: 33%;
+  }
+
+  3. status-bar의 요소중 두번째 것만 중앙에 둔다
+  .status-bar__column:nth-child(2) {
+    display: flex;
+    justify-content: center;
+  }
+
+  4. 마지막요소는 맨 끝에 가도록 위치시킴
+
+  .status-bar__column:last-child {
+  display: flex;
+  justify-content: flex-end;
+  }
+
+  + 세번째 요소의 퍼센테이지, 베터리아이콘, 번개아이콘들이 같은 높이에 위치하도록 지정 
+ .status-bar__column:last-child {
+   align-items: center; 
+ }
+  */
   justify-content: center;
+  /* justify-content: space-between; 
+  -> 시간이 정중앙에 오지 않는다 */
   padding: 5px 3px;
 }
 .status-bar__column {
@@ -19,6 +52,13 @@
   align-items: center;
 }
 
+/* 세번째  status-bar__column요소에 동일한 간격을 주기위해*/
 .status-bar__column .fa-battery-full {
   margin: 0px 5px;
 }
+
+/*
+FontQwesome 아이콘을 크게만들어주는 class가 있다
+FontAwesome에서 해당 아이콘을 검색했을 때 크기에 따른 아이콘을 클릭하면
+확인가능
+*/

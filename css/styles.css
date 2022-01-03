@@ -1,6 +1,12 @@
+/* google fonts import */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
 
+/* 
+html의 head안에 link:css로 하는것보다는 좋은 방법이다 
+css를 여러 파일로 분할했다가 다시 합치는 과정이다
+*/
 @import "reset.css";
+/* 자주 사용하는 색상코드 같은거를 변수로 선언 */
 @import "variables.css";
 
 /* Components */
@@ -21,7 +27,22 @@
 @import "screens/settings.css";
 @import "screens/chat.css";
 
+/* 
+=== import하는 순서 ===
+1. font import
+2. reset.css
+3. variable.css
+*/
+
 body {
+  /* 
+  google fonts
+  select this fonts - embed 
+  여러개의 스타일을 가져오면 무거워지기 때문에
+  꼭 사용할 스타일만 import해오자
+  head의 link로 가져올 수도 있긴 하지만
+  니꼬는 css를 통해 불러오는 것을 추천한다
+  */
   color: #2e363e;
   font-family: "Open Sans", sans-serif;
 }

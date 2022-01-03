@@ -1,6 +1,8 @@
 .welcome-header {
   margin: 90px 0px;
+  /* 글자 가운데정렬 */
   text-align: center;
+  /* 자식요소들을 세로로 정렬하면서 flex */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,12 +11,16 @@
   margin-bottom: 20px;
   font-size: 25px;
 }
+
+/* 너비 고정시키기 위해 */
 .welcome-header__text {
   width: 60%;
+  /* 글자색 회색처럼 보이도록 */
   opacity: 0.7;
 }
 
 #login-form {
+  /* 자식요소들이 아래로 정렬되도록 지정 */
   display: flex;
   flex-direction: column;
   margin: 0px 30px;
@@ -22,16 +28,24 @@
 
 #login-form input {
   border: none;
+  /* input 위아래너비 지정 */
   padding: 15px 0px;
+  /* placeholder보면 글자크기가 크다는 걸 확인할 수 있다 */
   font-size: 18px;
+  /* 간격 */
   margin-bottom: 25px;
 }
 
+/* .login-form__input { } */
+/* submit input을 제외한 input에만 적용시킴 */
 #login-form input:not([type="submit"]) {
+  /* 아이디 비밀번호 밑줄지정 */
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  /* border-color를 0.3초동안 변하도록 지정 */
   transition: border-color 0.3s ease-in-out;
 }
 
+/* input의 placeholder만 연하게 지정 */
 #login-form input::placeholder {
   color: rgba(0, 0, 0, 0.4);
 }
@@ -40,16 +54,20 @@
   border-color: var(--yellow);
 }
 
+/* .login-forn__button { } */
 #login-form input[type="submit"] {
+  /* variable에 지정한 --yellow변수 사용 */
   background-color: var(--yellow);
   cursor: pointer;
   padding: 20px 0px;
   border-radius: 5px;
 }
 
+/* login-form__a { } */
 #login-form a {
   text-align: center;
   text-decoration: none;
+  /* 기본값으로 지정 */
   color: inherit;
   font-size: 13px;
 }

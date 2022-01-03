@@ -123,10 +123,18 @@ table {
   border-spacing: 0;
 }
 
+/*
+니꼬가 새로 적용한 스타일링
+input창을 클릭했을 때 파란색 아웃라인이 생성되지 않도록 지정
+*/
 input:focus {
   outline: none;
 }
 
+/* 
+니꼬가 새로 적용한 스타일링2
+링크의 스타일속성 지정
+*/
 a {
   color: inherit;
   text-decoration: none;

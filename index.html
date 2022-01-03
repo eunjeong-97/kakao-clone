@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- 단축키 link:css  -->
     <link rel="stylesheet" href="css/styles.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,7 +10,7 @@
   <body>
     <div class="status-bar">
       <!-- BEM -->
-      <!-- status-bardp 에 있는 column -->
+      <!-- status-bar에 있는 column -->
       <div class="status-bar__column">
         <span>No Service</span>
         <i class="fas fa-wifi"></i>
@@ -31,10 +32,24 @@
       </p>
     </header>
 
+    <!-- 
+    == action == 
+    friends.html페이지로 데이터 전달하면서
+    submit버튼을 눌렀을 때 해당 페이지로 이동한다
+    == method == 
+    1. post: 백엔드 서버로 data 전달
+      나중에 프로젝트를 github에 업로드했을때 POST방식은 작동하지 않고
+      GET방식만 작동할 것이기 때문에 지금은 GET 메서드를 사용한다
+    2. get: 보안에 취약히기 때문에 username 및 password를 GET방식으로 보내면 안된다
+    URL에 포함되어도 상관없는 정보들을 get방식으로 보낸다
+    google의 검색창 검색같은 방식
+    -->
     <form action="friends.html" method="get" id="login-form">
       <input name="username" type="text" placeholder="Email or phone number" />
       <input name="password" type="password" placeholder="Password" />
       <input type="submit" value="Log In" />
+      <!-- 링크는 많을 것이기 때문에 id, class를 적용하지 않는다 -->
+      <!-- 링크를 form 태그 안에 넣는 이유:  -->
       <a href="#">Find Kokoa Account or Password</a>
     </form>
 
@@ -57,4 +72,7 @@
 3. font awesome
 <script src="https://kit.fontawesome.com/6478f529f2.js"
 crossorigin="anonymous"></script>
+4. styles.css파일에서 import 다른 css파일
+5. variable.css에서 선언한 변수 사용 var(변수명)
+6. form태그의 action method 속성
 -->

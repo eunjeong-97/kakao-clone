@@ -1,11 +1,24 @@
 .badge {
   background-color: tomato;
-  width: 30px;
-  height: 30px;
-  border-radius: 15px;
+  /* display: inline인 상태에서는 먹히지 않는다 */
+  /* 원으로 만들기 50%로 지정해도 됨 */
+  border-radius: 50%;
+  /* 숫자를 가운데로 지정
+  여기서 display: block가 남아있다면 먹히지않는다 */
+  /* display: block; */
+}
+
+.number {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 30px;
+  height: 30px;
   color: white;
   font-weight: 600;
+}
+
+.small {
+  width: 5px;
+  height: 5px;
 }

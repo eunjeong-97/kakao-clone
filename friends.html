@@ -7,6 +7,7 @@
     <title>Friends - Kokoa Clone</title>
   </head>
   <body>
+    <!-- status-bar 그대로 -->
     <div class="status-bar">
       <div class="status-bar__column">
         <span>No Service</span>
@@ -77,16 +78,23 @@
       </div>
     </main>
 
+    <!-- nav>ul>li*4>a enter 단축키
+      tab키를 통해 href및 내용을 입력할 수 있다 -->
+      <!-- 태그이름과 클래스이름이 동일해도 된다 -->
     <nav class="nav">
       <ul class="nav__list">
         <li class="nav__btn">
           <a class="nav__link" href="friends.html"
-            ><i class="fas fa-user fa-2x"></i
+            >
+            <!-- 아이콘을 눌러주면 해당 경로로 이동 -->
+            <!-- FontAwesome 사이트에서 해당 아이콘의 사이즈가 어떻게 있는지 볼 수 있다 -->
+            <i class="fas fa-user fa-2x"></i
           ></a>
         </li>
         <li class="nav__btn">
           <a class="nav__link" href="chats.html">
-            <span class="nav__notification badge">1</span>
+            <!-- 채팅아이콘위의 빨간색 아이콘 -->
+            <span class="nav__notification badge number">1</span>
             <i class="far fa-comment fa-2x"></i>
           </a>
         </li>
@@ -97,7 +105,9 @@
         </li>
         <li class="nav__btn">
           <a class="nav__link" href="more.html"
-            ><i class="fas fa-ellipsis-h fa-2x"></i
+            >
+            <span class="nav__notification-dot badge small"></span>
+            <i class="fas fa-ellipsis-h fa-2x"></i
           ></a>
         </li>
       </ul>
@@ -116,3 +126,9 @@
     ></script>
   </body>
 </html>
+
+
+<!--
+nav>ul>li*4>a enter 단축키
+tab키를 통해 href및 내용을 입력할 수 있다
+-->

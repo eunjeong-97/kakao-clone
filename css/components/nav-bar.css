@@ -1,9 +1,20 @@
 .nav {
+  /* 
+  화면을 아무리 스크롤해도 navigation-bar가 맨 아래에 존재하도록
+  */
   position: fixed;
   bottom: 0;
   width: 100%;
   background-color: #f9f9fa;
   padding: 20px 50px;
+  /*
+  맨 오른쪽의 아이콘이 사라지는 오류를 해결해준다
+  기존의 100% 너비에 좌우 Padding으로 준만큼 box를 크게 만들었다
+  그래서 box-sizing: border-box; 이라고 입력함으로써
+  [내가 padding을 줘도 신경쓰지말고 box 사이즈를 늘리지 말라]고
+  명령하게 된다
+  결론: padding을 줘도 box 사이즈를 변경하지 않게 해준다
+  */
   box-sizing: border-box;
   border-top: 1px solid rgba(121, 121, 121, 0.3);
 }
@@ -12,6 +23,7 @@
   justify-content: space-between;
 }
 .nav__link {
+  /* nav__notification의 position: absolute의 기준점으로 만들기 위해 */
   position: relative;
   color: #2e363e;
 }
@@ -33,6 +45,12 @@
   left: 15px;
   bottom: 15px;
   animation: notificationAnimation 2s ease-in-out infinite;
+}
+
+.nav__notification-dot {
+  position: absolute;
+  left: 30px;
+  top: -10px;
 }
 
 @keyframes appearBtnAnimation {
