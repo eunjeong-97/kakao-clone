@@ -23,6 +23,8 @@
       </div>
     </div>
 
+    <!-- 화면에 따라 아이콘이나 title의 내용이 다를 뿐
+    구성은 동일하기 때문에 components에 넣는다 -->
     <header class="screen-header">
       <h1 class="screen-header__title">Friends</h1>
       <div class="screen-header__icons">
@@ -33,29 +35,44 @@
     </header>
 
     <a id="friends-display-link">
-      <i class="fas fa-info-circle"></i> Friends' Names Display
+      <i class="fas fa-info-circle"></i>
+      <span>Friends' Names Display</span>
       <i class="fas fa-chevron-right fa-xs"></i>
     </a>
 
     <main class="friends-screen">
+      <!--
+      때때로 우측에 뭔가 와야할 경우가 있고
+      1줄일 때와 2줄일 때가 있다
+      => 전부 다 있을 경우의 틀을 만들어놓고
+      실제로 비어있을 경우에는 해당 요소에는 내용을 입력하지 말자
+      -->
       <div class="user-component">
+        <!-- .user-component__column*2 & enter -->
         <div class="user-component__column">
+          <!-- user-component__avatar--xl 같은 클래스명을 통해 사이즈변경을 해주자 -->
           <img
             src="https://avatars3.githubusercontent.com/u/3612017"
             class="user-component__avatar user-component__avatar--xl"
           />
           <div class="user-component__text">
             <h4 class="user-component__title">Nicolas</h4>
+            <!-- 지금은 사용하지 않지만 나중에 다른 곳에서 쓰여질 것을 생각하고 메모남김 -->
             <!-- <h6 class="user-component__subtitle">this text whatever</h6> -->
           </div>
         </div>
+        <!-- 해당내용이 없는경우 -->
         <div class="user-component__column"></div>
       </div>
+
+      <!-- friends-screen화면의 channel -->
       <div class="friends-screen__channel">
+        <!-- friends-screen화면의 channel-header  -->
         <div class="friends-screen__channel-header">
           <span>Channel</span>
           <i class="fas fa-chevron-up fa-xs"></i>
         </div>
+        <!-- 유저 컴포넌트 -->
         <div class="user-component">
           <div class="user-component__column">
             <img
@@ -63,12 +80,15 @@
               class="user-component__avatar user-component__avatar--sm"
             />
             <div class="user-component__text">
+              <!-- user-component__title--not-bold 라는 옵션을 준다 -->
               <h4 class="user-component__title user-component__title--not-bold">
                 Channel
               </h4>
             </div>
           </div>
           <div class="user-component__column">
+            <!-- .user-component__column:last-child의 flex-end 속성을 받지 않으면서
+            inherit한 color는 상속받는다 -->
             <div>
               <span>2</span>
               <i class="fas fa-chevron-right fa-xs"></i>
@@ -129,6 +149,13 @@
 
 
 <!--
-nav>ul>li*4>a enter 단축키
+== 새로배운점 ==
+1. nav>ul>li*4>a enter 단축키
 tab키를 통해 href및 내용을 입력할 수 있다
+2. 여러번 사용할 UI는 컴포넌트 형식으로 만들어놓자
+  - 모든 요소가 다 포함된 UI를 기준으로 구조를 만들고
+  - 해당하는 요소가 없을 경우에는 contents가 없는 tag만을 남겨주면 된다
+  - 사이즈나 상태값은 기본값으로 우선 설정하고
+  - 특이사항 같은 경우 클래스명을 추가해서 덮어씌우도록 하자 (예: size xl)
+  => 기본적인 구조를 만든다는 것에 집중하자
 -->

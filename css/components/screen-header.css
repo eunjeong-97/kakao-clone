@@ -3,6 +3,10 @@
   justify-content: space-between;
   align-items: center;
   padding: var(--horizontal-space);
+  /* 해당 요소를 공통적으로 사용할거라 예상하고 
+  컴포넌트에 margin을 적용햇는데
+  어느 페이지에서만 유독 안예뻐보인다면
+  해당 페이지에서는 -15px로 없애주면 된다 */
   margin-bottom: 15px;
 }
 
