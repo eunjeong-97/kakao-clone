@@ -20,13 +20,12 @@
   }
 
   4. 마지막요소는 맨 끝에 가도록 위치시킴
-
   .status-bar__column:last-child {
   display: flex;
   justify-content: flex-end;
   }
 
-  + 세번째 요소의 퍼센테이지, 베터리아이콘, 번개아이콘들이 같은 높이에 위치하도록 지정 
+  5. 세번째 요소의 퍼센테이지, 베터리아이콘, 번개아이콘들이 같은 높이에 위치하도록 지정 
  .status-bar__column:last-child {
    align-items: center; 
  }

@@ -14,6 +14,18 @@
   font-weight: 600;
 }
 
+/* === 삼분할하는 방법 2 ===
+1. 첫번째 마지막 margin auto
+첫번째 요소 margin-right: auto;
+마지막 요소 margin-left: auto;
+2. 각각의 column의 너비 33%
+3. 마지막 column을 오른쪽 끝으로 배치
+  display: flex;
+  justify-content: flex-end;
+4. 두번째 요소 가운데 정렬
+두번째 요소의 inline 글자부분 text-align: center;
+*/
+
 .alt-header__column:first-child {
   margin-right: auto;
 }

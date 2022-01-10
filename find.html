@@ -31,6 +31,8 @@
     </header>
 
     <main class="main-screen">
+      <!-- more 페이지 상단의 icon 모음과 비슷하기
+      때문에 컴포넌트로 만들어서 사용 -->
       <div class="icon-row">
         <div class="icon-row__icon">
           <i class="fas fa-qrcode"></i>
@@ -60,13 +62,17 @@
             >Go to Openchat Home <i class="fas fa-chevron-right fa-xs"></i>
           </span>
         </div>
+        <!-- 오픈채팅방 카드 -->
         <div class="open-post">
+          <!-- class명 이름 짓는것도 최대한 비슷하게 적어주자 -->
           <div class="open-post__column">
             <h5 class="open-post__title">#BTS</h5>
+            <!-- 타이핑은 소문자로 하고 보여지는 거는 대문자로 -->
             <h6 class="open-post__hashtags">#bts#army#friends</h6>
             <div class="open-post__members">
               <img src="https://avatars3.githubusercontent.com/u/3612017" />
               <span class="open-post__member-count">802 members</span>
+              <!-- | 부분을 divider 박스를 이용해서 사용 -->
               <div class="divider"></div>
               <span class="open-post__member-status">Active</span>
             </div>
