@@ -157,12 +157,13 @@ flex container의 flex-direction에 reverse 속성추가
   background-color: white;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 5px 25px;
   box-sizing: border-box;
-  align-items: center;
   transition: transform 0.3s ease-in-out;
 }
 
+/* reply__column은 너비를 가지지 않기 때문에 직접 지정 */
 .reply .reply__column:first-child {
   width: 10%;
 }
@@ -207,6 +208,9 @@ flex container의 flex-direction에 reverse 속성추가
 .reply__column button i {
   opacity: 1;
 }
+
+/* reply__column button 버튼이 활성화되었을 때
+별다른 스타일링 안줌 */
 .reply__column button:focus,
 .reply__column button:active {
   outline: none;

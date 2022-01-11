@@ -30,6 +30,37 @@
   color: rgba(0, 0, 0, 0.5);
 }
 
+/* 보여졌다가 사라지는 애니메이션
+animation: hideSplashScreen 0.3s ease-in-out;
+애니메이션이 끝나면 element들은 이전의 상태로 돌아간다
+즉, default값에 의해 element는 다시 opacity: 1을 가지게 된다
+우리가 원하는 것은 애니메이션이 종료되면 
+splash-screen 이라는 div는 default값을 기억하지 못하고
+opacity: 0이 되는 것이다
+
+animation: hideSplashScreen 0.3s ease-in-out forwards;
+이렇게 할 수 있도록 forwards라는 마지막 속성값 (=final property value)을
+(마지막 속성값을 마지막 keyframes로 정해지고) 애니메이션이 끝나고 유지한다 
+
+마지막 속성인 opacity: 0이 애니메이션이 끝나도록 유지되는 것이다
+즉, 애니메이션의 마지막 keyframes를 기억하게 된다
+
+=== JavaScript 사용하는 대신,  keyframes 속성 수정하기 ===
+하지만 이렇게 적용해서 friends.html 페이지가 보인다고 해도 
+보여지지 않는 splash-screen 이라는 div element가 아직 그대로 있어서 
+실제로 버튼을 누른다고 해서 작동되지 않는다
+
+이런 이슈를 해결하기 위해서는 visibility: hidden; 이라는 속성을 추가해
+마우스에 걸리지 않도록 빼주면 된다
+그래서 정말로 뭔가를 숨기거나 할 때에는 visibility: hidden; 이라는 테크닉을 사용하면 안되고
+html 요소를 없애고 싶을 때에는 JavaScript를 활용하면 된다.
+
+=== 정리 ===
+1. 애니메이션의 마지막 값을 기억하고 싶다 혹은 이 값을 가지고 싶은 경우
+(= 기본적으로 마지막 값을 애니메이션이 끝난 자리에 복붙해주고 싶다면)
+animation의 forwards 속성을 사용한다
+forwards는 마지막 keyframes를 기억한다 (from_to / 0_50_100 뭐든)
+*/
 @keyframes hideSplashScreen {
   from {
     opacity: 1;
@@ -42,14 +73,22 @@
 
 #splash-screen {
   background-color: var(--yellow);
+  /* 맨위에 올려져서 보여지도록
+  모든 부분을 커버해준다 */
   position: absolute;
   height: 100vh;
   width: 100vw;
   top: 0;
+  /* 카카오톡 아이콘 가운데 정렬 */
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 132px;
+  /* 애니메이션 속성 */
   animation: hideSplashScreen 0.3s ease-in-out forwards;
+
+  /* 애니메이션이 바로 시작하지 않고
+  0.3초동안 아무것도 안하다가 (=계속 splash-screen div 요소를 보여준다)
+  애니메이션 시작 (=보여졌다가 보여지지 않는) */
   animation-delay: 0.3s;
 }
