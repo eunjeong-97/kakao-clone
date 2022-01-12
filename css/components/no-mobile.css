@@ -1,16 +1,19 @@
 #no-mobile {
+  /* 카카오톡 이미지 애니메이션처럼 동일하게 */
   position: absolute;
-  z-index: 99;
-  height: 100vh;
-  background-color: var(--yellow);
-  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 32px;
+  width: 100vw;
+  height: 100vh;
   top: 0;
+  z-index: 99;
+  background-color: var(--yellzow);
+  font-size: 32px;
 }
 
+/* 645px보다 작을 때에는 #no-mobile을 보이지 않게
+이보다 더 클 때에는 display: flex; */
 @media screen and (max-width: 645px) {
   #no-mobile {
     display: none;
